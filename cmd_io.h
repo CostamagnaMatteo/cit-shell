@@ -7,7 +7,8 @@
 #ifndef cmd_io_lib
 #define cmd_io_lib
 
-#define CMD_MAX_LENGTH 255
+#define CMD_MAX_LENGTH  255
+#define MAX_CMD_ARGC    255
 
 char* read_line();
 char** split_line_to_cmd(char line[]);

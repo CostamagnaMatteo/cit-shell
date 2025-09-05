@@ -4,10 +4,12 @@
 #include <stdlib.h>
 #include <errno.h>
 
+#include "stdio.h"
+
 void fork_cmd(char** cmd){
     pid_t pid;
-
     int status;
+
     
     pid = fork();
 

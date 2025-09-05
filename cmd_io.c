@@ -6,18 +6,23 @@ void print_terminal_line(struct cit_state* state_ptr){
 }
 
 char** split_line_to_cmd(char line[]){
-  char **cmd = (char**) malloc(10 * sizeof(char*));
+  char **cmd = (char**) malloc((MAX_CMD_ARGC + 1) * sizeof(char*));
 
   char *strptr;
 
   char *nxt_tkn = strtok_r(line, " \t", &strptr);
   int i = 0;
-  while (nxt_tkn != NULL )
+  while (nxt_tkn != NULL && i < MAX_CMD_ARGC)
   {
-    printf("\t == %s == \n", nxt_tkn);
-    nxt_tkn = strtok_r(NULL, " \t", &strptr);
     cmd[i++] = nxt_tkn;
+    nxt_tkn = strtok_r(NULL, " ", &strptr);
   }
+
+  do{
+    cmd[i++] = NULL;
+  }while(i < MAX_CMD_ARGC + 1);
+  
+
 
   return cmd;
   
