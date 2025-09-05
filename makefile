@@ -1,7 +1,10 @@
 CC = gcc
 CFLAGS = -Wall --pedantic
 
-PROGRAM_NAME = cit
+RELEASE_FOLDER 	= release/
+DEBUG_FOLDER 	= debug/
+
+PROGRAM_NAME 	= cit
 
 FOLDER_OBJ = obj/
 
@@ -14,6 +17,6 @@ HEADER_FILES 	= run_cmd.h state.h cmd_io.h
 
 
 all: 
-	$(CC) $(CFLAGS) -o $(PROGRAM_NAME) $(MAIN_FILE) $(SOURCE_FILES) $(HEADER_FILES)
+	$(CC) $(CFLAGS) -o $(DEBUG_FOLDER)$(PROGRAM_NAME) $(MAIN_FILE) $(SOURCE_FILES) $(HEADER_FILES)
 
 
