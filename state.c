@@ -2,6 +2,9 @@
 
 #include "state.h"
 
+const char default_folder_path[] = "/home/matteo/Desktop/";
+const char cmd_builtin_exit[] = "exit";
+const char cmd_builtin_clear[] = "clear";
 
 struct cit_state* init_state(){
     struct cit_state* state_ptr = (struct cit_state *) malloc(sizeof(struct cit_state));
